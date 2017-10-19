@@ -1,13 +1,19 @@
 package bd.ac.seu.ormdemo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
+
+    @Id
     int studentId;
-    int studentName;
+    String studentName;
 
     public Student() {
     }
 
-    public Student(int studentId, int studentName) {
+    public Student(int studentId, String studentName) {
         this();
         this.studentId = studentId;
         this.studentName = studentName;
@@ -21,11 +27,11 @@ public class Student {
         this.studentId = studentId;
     }
 
-    public int getStudentName() {
+    public String getStudentName() {
         return studentName;
     }
 
-    public void setStudentName(int studentName) {
+    public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
 
