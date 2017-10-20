@@ -19,7 +19,6 @@ public class JdbcConnection {
         connection = null;
 
         try {
-            System.out.println("we are in private constrictor");
             Class.forName("com.mysql.jdbc.Driver");
             final String DBURL = "jdbc:mysql://localhost/predictdb";
             final String USERNAME = "root";
@@ -34,7 +33,6 @@ public class JdbcConnection {
     }
 
     public static Connection getConnection(){
-        System.out.println("we are in public method");
         return connection;
     }
 
