@@ -12,8 +12,9 @@ public class Main {
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
-        Student student = new Student(2014100071,"Rakib Hasan Sabbir");
-        session.save(student);
+//        Student student = new Student(2014100071,"Rakib Hasan Sabbir");
+//        session.save(student);
+        Student student = session.get(Student.class,2014100071);
         session.getTransaction().commit();
         System.out.println(student);
     }
