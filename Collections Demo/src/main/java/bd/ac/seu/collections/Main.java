@@ -10,10 +10,14 @@ import java.util.List;
 
 public class Main {
     private List<Student> studentList;
+    private List<Course> courseList;
     public Main() {
 //        StudentDao studentDao = new StudentDaoMysqlImplementation();
         StudentDao studentDao = new StudentDaoCsvImplementation();
         studentList = studentDao.getAllStudents();
+
+        CourseDao courseDao = new CourseDaoMysqlImplementation();
+        courseList = courseDao.getAllCourses();
 /*
             for (int i = 0; i<studentList.size();i++){
                 System.out.println(studentList.get(i));
@@ -25,7 +29,7 @@ public class Main {
             }
 */
 
-        studentList.forEach(System.out::println);
+        courseList.forEach(System.out::println);
 //Find out the student with the longest name
 
             Student maxlengthNameStudent = studentList.get(0);
