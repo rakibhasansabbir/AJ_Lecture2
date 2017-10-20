@@ -11,14 +11,16 @@ import java.util.List;
 public class Main {
     private List<Student> studentList;
     public Main() {
+        System.out.println("under main");
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
+            JdbcConnection.getConnection();
 
-            final String DBURL = "jdbc:mysql://localhost/predictdb";
-            final String USERNAME = "root";
-            final String PASSWORD = "rakib";
-
-            Connection connection = DriverManager.getConnection(DBURL,USERNAME,PASSWORD);
             Statement statement = connection.createStatement();
 
             String query = "select * from student";
@@ -48,8 +50,6 @@ public class Main {
                     maxlengthNameStudent = student;
             }
             System.out.println("max length of student is: " + maxlengthNameStudent);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
